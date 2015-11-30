@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<title> Final Project Page 3 </title>
+	<link href="styles/styles.css" rel="stylesheet">
+	 <script src="js/javascript.js"></script>
+</head>
+	<body class="menu">
+
+	<div id="everything">
+	<header>
+		<div id="menu">
+		<a href="#" class="menu-toggle"> Click to Navigate </a>
+		</div>
+			<nav class="menu-side">
+					Table of Contents
+				<div id="contents">
+				<ul>
+					<li><a href="index.html"> Home </a></li>
+					<li><a href="pagetwo.html"> Chapter One</a></li>
+					<li><a href="pagethree.html"> Chapter Two</a></li>
+					<li><a href="pagefour.html"> Chapter Three</a></li>
+					</ul>
+				</div>
+			</nav>
+				</header>
+<h1> Welcome to the Digital Age Page Three </h1>
+	
+<div id="container">
+  <div id="digital">
+    <div onclick="digital(0); clearInterval(intrvl);" style="background:#999;"></div>
+    <div onclick="digital(1); clearInterval(intrvl);"></div>
+    <div onclick="digital(2); clearInterval(intrvl);"></div>
+   </div>
+  <div id="digitalcontent">
+    <h2> Slide 1 </h2>
+    <p> At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperi </p>
+    </div>
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script>			
+			(function() {
+				var body = $('body');
+				$('.menu-toggle').bind('click', function() {
+					body.toggleClass('menu-open');
+					return false;
+					});
+			})();
+			</script>	
+<script>
+
+	function _(x){return document.getElementById(x);}
+
+var da, di=0, intrvl;
+
+var dca = [
+    '<h2>Slide 1</h2><p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperi</p>',
+		'<h2>Slide 2</h2><p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperi</p>',
+	'<h2>Slide 3</h2><p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperi</p>',
+	
+];
+function digital(di){
+	
+	_("digitalcontent").style.opacity = 0;
+	for(var i=0; i < da.length; i++){
+		da[i].style.background = "rgba(0,0,0,.1)";
+	}
+	
+	da[di].style.background = "#999";
+	
+	setTimeout(function(){
+		_("digitalcontent").innerHTML = dca[di];
+		_("digitalcontent").style.opacity = 1;
+	}, 300);
+}
+
+function digitalSlide(){
+	di++; 
+	if(di == da.length){
+		di = 0;
+	}
+	
+	digital(di);
+}
+
+window.addEventListener("load", function(){
+	da = _("digital").children;
+	
+});
+</script>
+</body>
+</html>
